@@ -1,0 +1,45 @@
+<script src ="react.development.js"></script>
+
+<script src ="babel.js"></script>
+
+<script src = "react-dom.development.js"></script>
+
+<div id="root"></div>
+
+<style>
+    .box{
+
+         width : 100px;
+         height : 100px;
+         margin: 10px;
+         border : 2px solid red;
+         display : inline-block;
+         line-height: 100px;
+         text-align: center;
+         
+    }
+</style>
+
+<script type = "text/babel">
+
+const Box = (data) =>{
+    return <div className = "box">{data.n}</div>
+}
+
+function App(){
+    return <div><div><Box n="1"/><Box n="2"/><Box n="3"/></div>
+                <div><Box n="4"/><Box n="5"/><Box n="6"/></div>
+                <div><Box n="7"/><Box n="8" /><Box n="9"/></div>
+            </div>
+    
+
+}
+
+ReactDOM.render(<App/>,
+    document.getElementById("root"),
+    function(){
+        alert("Content Placed")
+    }
+);
+</script>
+
