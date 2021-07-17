@@ -1,0 +1,73 @@
+<script src ="react.development.js"></script>
+<script src = "react-dom.development.js"></script>
+<script src ="babel.js"></script>
+<div id = "root"></div>
+
+<script type ="text/babel">
+
+class App extends React.Component{
+    constructor(){
+        super();
+        this.fnAdd = this.fnAdd.bind(this)
+    }
+
+   fnAdd (){
+           const  {n1Ref,n2Ref , resultRef} = this.refs;
+            console.log(this.refs)
+            // let n1 = this.refs.n1Ref.value
+            let n1 = n1Ref.value
+            n1=Number(n1)
+             //alert(n1)
+
+            //  let n2 =this.refs.n2Ref.value
+            let n2 =n2Ref.value
+            n2 =Number(n2)
+             //alert(n2)
+             let sum = n1+n2;
+            //  let resultRef = document.getElementById("result")
+               resultRef.innerText = sum;
+   }
+    
+   render(){
+         return <div>
+             <p>
+                <b>Num1 :</b>  <input id="n1" ref ="n1Ref" />
+            </p>
+            <p>
+                <b>Num2 :</b>  <input id ="n2" ref ="n2Ref" />
+            </p>
+            <p>
+               <button onClick = {this.fnAdd}>SUMM</button>
+                
+            </p>
+            
+                <h1 id ="result"  ref="resultRef"></h1>
+          </div>
+     }
+}
+
+   ReactDOM.render(<App/>,
+    document.getElementById("root"))
+
+</script> 
+
+
+
+
+ // fAdd(){
+        //pure javaScript used here
+    //     let n1Ref = document.getElementById("n1")
+    //     let n1=n1Ref.value
+    //     n1 = Number(n1)
+    //     //alert(n1)
+
+    //     let  n2Ref=document.getElementById("n2")
+    //     let n2= n2Ref.value
+    //      n2 =Number(n2)
+    //     // alert(n2)
+
+    //     let sum = n1+n2;
+    //     //alert(sum)
+    //     let resultRef =document.getElementById("result")
+    //      resultRef.innerText=sum
+    // }
